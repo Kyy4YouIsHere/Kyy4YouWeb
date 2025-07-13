@@ -7,19 +7,20 @@
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f9f9f9;
-      text-align: center;
       margin: 0;
       padding: 40px 20px;
+      background: url('https://files.catbox.moe/q7j9h9.jpg') no-repeat center center fixed;
+      background-size: cover;
+      text-align: center;
     }
 
     .container {
-      background-color: #ffffff;
+      background-color: rgba(255, 255, 255, 0.9);
       max-width: 600px;
       margin: auto;
       padding: 30px;
       border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
 
     img {
@@ -39,29 +40,93 @@
       color: #555;
     }
 
-    a.whatsapp-btn {
+    a.whatsapp-btn, button.doc-btn {
       display: inline-block;
-      margin-top: 20px;
+      margin: 10px;
       padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    a.whatsapp-btn {
       background-color: #25d366;
       color: white;
-      text-decoration: none;
-      font-size: 16px;
-      border-radius: 8px;
-      transition: background-color 0.3s ease;
     }
 
     a.whatsapp-btn:hover {
       background-color: #1da851;
     }
+
+    button.doc-btn {
+      background-color: #007bff;
+      color: white;
+    }
+
+    button.doc-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .form-area {
+      margin-top: 20px;
+      display: none;
+    }
+
+    .form-area input {
+      padding: 10px;
+      font-size: 16px;
+      width: 80%;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+
+    .form-area button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .form-area button:hover {
+      background-color: #218838;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="https://j.top4top.io/p_3478tws8s1.jpg" alt="Foto Kyy4You"> <!-- Ganti dengan foto kamu -->
+    <img src="https://j.top4top.io/p_3478tws8s1.jpg" alt="Foto Kyy4You">
     <h1>Haii, Selamat Datang di Website Saya</h1>
     <p><strong>Kyy4You</strong></p>
-    <a class="whatsapp-btn" href="https://wa.me/6288215713854" target="_blank">Hubungi Kyy4You via WhatsApp</a>
+    <a class="whatsapp-btn" href="https://wa.me/6281234567890" target="_blank">Hubungi Kyy4You via WhatsApp</a>
+    <button class="doc-btn" onclick="toggleForm()">Doc</button>
+
+    <div class="form-area" id="formArea">
+      <input type="text" id="numberInput" placeholder="Masukkan Nomor">
+      <br>
+      <button onclick="submitNumber()">Kirim</button>
+    </div>
   </div>
+
+  <script>
+    function toggleForm() {
+      const form = document.getElementById('formArea');
+      form.style.display = form.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function submitNumber() {
+      const number = document.getElementById('numberInput').value;
+      if (number) {
+        alert("Nomor berhasil dikirim: " + number);
+      } else {
+        alert("Silakan masukkan nomor terlebih dahulu.");
+      }
+    }
+  </script>
 </body>
 </html>
